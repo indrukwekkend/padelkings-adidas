@@ -2,11 +2,12 @@
 /*
  * Title:           Visual layout
  * Description:     Displays a row with a background image
- * Version:         v2.0.1
+ * Version:         v2.0.2
  *
  * Field Map:
- * image (image url)
  * toggle (button_group)
+ * title (text)
+ * image (image url)
  *
  * Files:
  * templates/sections/visual.php
@@ -19,11 +20,11 @@ add_action('acf/init', function(){
     'title' => __('Afbeelding'),
     'fields' => array(
       array(
-        'key' => 'field_toggle',
+        'key' => 'field_visual_toggle',
         'label' => 'Visuele modus',
         'name' => 'toggle',
         'type' => 'button_group',
-        'instructions' => 'Toon de afbeelding vrijstaand of over de volledige breedte van de pagina',
+        'instructions' => __('Toon de afbeelding vrijstaand of over de volledige breedte van de pagina'),
         'choices' => array(
           'contained' => 'Vrijstaand',
           'full' => 'Pagina breedte',
@@ -32,9 +33,22 @@ add_action('acf/init', function(){
         'default_value' => 'full',
         'layout' => 'horizontal',
         'return_format' => 'value',
+        'wrapper' => array(
+          'width' => '30',
+        ),
       ),
       array(
-        'key' => 'field_image',
+        'key' => 'field_visual_url',
+        'label' => __('URL'),
+        'name' => 'url',
+        'type' => 'text',
+        'instructions' => __('Voer de URL in om de afbeelding klikbaar te maken'),
+        'wrapper' => array(
+          'width' => '70',
+        ),
+      ),
+      array(
+        'key' => 'field_visual_image',
         'label' => __('Afbeelding'),
         'name' => 'image',
         'type' => 'image',

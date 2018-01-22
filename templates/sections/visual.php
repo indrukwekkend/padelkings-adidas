@@ -1,11 +1,18 @@
+<?php
+
+$tag_start = ( get_sub_field('url') )? 'a target="_blank" href="'.get_sub_field('url').'"' : 'section';
+$tag_end = ( get_sub_field('url') )? 'a' : 'section';
+
+?>
+
 <?php if( get_sub_field('toggle') == "full" ): ?>
 
-  <section class="visual container-fluid" style="background-image:url(<?php the_sub_field('image'); ?>);background-size:cover;background-position:center; min-height:480px; ">
-  </section>
+  <<?= $tag_start;?> class="visual container-fluid" style="background-image:url(<?php the_sub_field('image'); ?>);background-size:cover;background-position:center; min-height:480px; ">
+  </<?= $tag_end;?>>
 
 <?php else: ?>
 
-  <section class="visual container">
+  <<?= $tag_start;?> class="visual container">
 
     <div class="row py-3">
 
@@ -17,6 +24,6 @@
 
     </div>
 
-  </section>
+  </<?= $tag_end;?>>
 
 <?php endif; ?>
