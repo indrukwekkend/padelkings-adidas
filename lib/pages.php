@@ -1,8 +1,12 @@
 <?php
 
 /**
-* Advanced Custom Fields: Option pages
-*/
+ * Advanced Custom Fields: Option pages
+ *
+ * Field Map:
+ * Algemeen Telefoonmummer (text)
+ * Algemeen Emailadres (text)
+ */
 namespace Roots\Sage\Pages;
 
 add_action('acf/init', function(){
@@ -31,6 +35,7 @@ add_action('acf/init', function(){
       'key' => 'group_contact_informatie',
       'title' => 'Opties',
       'fields' => array(
+
         array(
           'key' => 'field_general_telefoon',
           'label' => __('Algemeen telefoonnummer'),
@@ -39,6 +44,7 @@ add_action('acf/init', function(){
           'instructions' => 'Voer hier het algemene telefoonnummer in',
           'placeholder' => '(072) 562 54 82',
         ),
+
         array(
           'key' => 'field_general_email',
           'label' => __('Algemeen emailadres'),
@@ -47,6 +53,7 @@ add_action('acf/init', function(){
           'instructions' => 'Voer hier het algemene emailadres in',
           'placeholder' => __('info@domein.nl'),
         ),
+
       ),
       'location' => array(
         array(
