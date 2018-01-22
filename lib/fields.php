@@ -12,7 +12,8 @@ $sage_includes = [
 	'lib/fields/visual.php',           // Visual
 	'lib/fields/cards.php',            // Visual
 	'lib/fields/maps.php',             // Google Maps
-	'lib/fields/maps-multi.php',             // Google Maps Multi
+	'lib/fields/maps-multi.php',       // Google Maps Multi
+	'lib/fields/side-by-side.php',     // Side By Side
 ];
 foreach ( $sage_includes as $file ) {
 	if ( ! $filepath = locate_template( $file ) ) {
@@ -205,6 +206,26 @@ add_action('acf/init', function(){
               ),
             ),
 
+            /*====== Side By Side ======*/
+            'layout_side_by_side' => array(
+              'key' => 'layout_side_by_side',
+              'name' => 'side_by_side',
+              'label' => __('Side By Side'),
+              'display' => 'block',
+              'sub_fields' => array(
+                array(
+                  'key' => 'field_side_by_side',
+                  'label' => 'Clone Side By Side',
+                  'name' => 'clone_side_by_side',
+                  'type' => 'clone',
+                  'clone' => array(
+                    0 => 'group_side_by_side',
+                  ),
+                  'display' => 'seamless',
+                  'layout' => 'block',
+                ),
+              ),
+            ),
           ),
     			'button_label' => __('Voeg layout toe'),
     		),
