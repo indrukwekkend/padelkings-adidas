@@ -29,3 +29,9 @@ foreach ( $sage_includes as $file ) {
 	require_once $filepath;
 }
 unset( $file, $filepath );
+
+// BrowserSync reload on post save
+add_action('save_post', function() {
+  $args = ['blocking' => false];
+  wp_remote_get('http://'.$_SERVER['SERVER_ADDR'].':3000/__browser_sync__?method=reload', $args);
+} );
