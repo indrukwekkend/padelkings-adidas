@@ -11,21 +11,28 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
+      <div id="primary_navigation" class="collapse navbar-collapse">
+
+        <span class="navbar-text">
+          <?php get_template_part('templates/sections/parts/navbar','social'); ?>
+        </span>
+
         <?php
             wp_nav_menu(
                 array(
                     'menu'              => 'primary_navigation',
                     'theme_location'    => 'primary_navigation',
                     'depth'             => 2,
-                    'container'         => 'div',
-                    'container_class'   => 'collapse navbar-collapse',
-                    'container_id'      => 'primary_navigation',
+                    'container'         => '',
+                    'container_class'   => '',
+                    'container_id'      => '',
                     'menu_class'        => 'nav navbar-nav ml-auto',
                     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                     'walker'            => new WP_Bootstrap_Navwalker()
                 )
             );
-        ?>
+          ?>
+        </div>
 
 			</div>
 		</div>

@@ -41,8 +41,8 @@ add_action('acf/init', function(){
           'label' => __('Algemeen telefoonnummer'),
           'name' => 'general_phone',
           'type' => 'text',
-          'instructions' => 'Voer hier het algemene telefoonnummer in',
-          'placeholder' => '(072) 562 54 82',
+          'instructions' => __('Voer hier het algemene telefoonnummer in'),
+          'placeholder' => __('(072) 562 54 82'),
         ),
 
         array(
@@ -50,10 +50,69 @@ add_action('acf/init', function(){
           'label' => __('Algemeen emailadres'),
           'name' => 'general_email',
           'type' => 'text',
-          'instructions' => 'Voer hier het algemene emailadres in',
+          'instructions' => __('Voer hier het algemene emailadres in'),
           'placeholder' => __('info@domein.nl'),
         ),
 
+        array(
+          'key' => 'field_general_social',
+          'label' => __('Social Media'),
+          'name' => 'general_social_items',
+          'type' => 'repeater',
+          'instructions' => __('Voeg hier de social media diensten toe'),
+          'layout' => 'table',
+          'button_label' => __('Dienst toevoegen'),
+          'sub_fields' => array(
+            array(
+              'key' => 'field_social_item_service',
+              'label' => __('Dienst'),
+              'name' => 'service',
+              'type' => 'select',
+              'value' => NULL,
+              'wrapper' => array(
+                'width' => '20',
+              ),
+              'choices' => array(
+                'facebook' => 'Facebook',
+                'instagram' => 'Instagram',
+                'twitter' => 'Twitter',
+                'youtube-play' => 'YouTube',
+                'linkedin' => 'Linkedin',
+                'pinterest' => 'Pinterest',
+                'google-plus' => 'Google+',
+              ),
+              'default_value' => array(
+              ),
+              'allow_null' => 0,
+              'multiple' => 0,
+              'ui' => 1,
+              'ajax' => 0,
+              'return_format' => 'value',
+            ),
+            array(
+              'key' => 'field_social_item_username',
+              'label' => __('Gebruikersnaam'),
+              'name' => 'username',
+              'type' => 'text',
+              'instructions' => __('Naam van het profiel'),
+              'value' => NULL,
+              'wrapper' => array(
+                'width' => '40',
+              ),
+            ),
+            array(
+              'key' => 'field_social_item_url',
+              'label' => __('URL'),
+              'name' => 'url',
+              'type' => 'text',
+              'instructions' => __('URL naar profiel pagina'),
+              'value' => NULL,
+              'wrapper' => array(
+                'width' => '40',
+              ),
+            ),
+          ),
+        ),
       ),
       'location' => array(
         array(
@@ -70,7 +129,7 @@ add_action('acf/init', function(){
       'label_placement' => 'left',
       'instruction_placement' => 'label',
       'active' => 1,
-      'description' => 'Algemene contact informatie',
+      'description' => __('Algemene contact informatie'),
     ));
 
   endif;
