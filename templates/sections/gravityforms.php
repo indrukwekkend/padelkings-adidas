@@ -1,20 +1,23 @@
-
 <?php $gravityform_id = get_sub_field('gravityform_id'); ?>
 
-<?php if($gravityform_id > 0): ?>
+<section class="gravityform">
 
-	<section class="gravityform">
+  <div class="row py-3 justify-content-center">
 
-		<div class="row py-3 justify-content-center">
+    <div class="col-8">
 
-			<div class="col-8">
+      <?php if($gravityform_id > 0): ?>
 
-				<?= do_shortcode('[gravityform id="'.$gravityform_id.'" title="false" description="false"]'); ?>
+        <?php gravity_form( $gravityform_id, false, false, false, '', false ); ?>
 
-			</div>
+      <?php else: ?>
 
-		</div>
+        <div class="alert alert-warning"><?= __('Kies een formulier.'); ?></div>
 
-	</section>
+      <?php endif; ?>
 
-<?php endif; ?>
+    </div>
+
+  </div>
+
+</section>
