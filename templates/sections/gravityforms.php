@@ -2,19 +2,23 @@
 
 <section class="gravityform">
 
-  <div class="row py-3 justify-content-center">
+  <div class="container">
 
-    <div class="col-8">
+    <div class="row py-3 justify-content-center">
 
-      <?php if($gravityform_id > 0): ?>
+      <div class="col-8">
 
-        <?php gravity_form( $gravityform_id, false, false, false, '', false ); ?>
+        <?php if($gravityform_id > 0): ?>
 
-      <?php else: ?>
+          <?php gravity_form( $gravityform_id, false, false, false, '', false ); ?>
 
-        <div class="alert alert-warning"><?= __('Kies een formulier.'); ?></div>
+        <?php else: ?>
 
-      <?php endif; ?>
+          <div class="alert alert-warning"><?= __('Kies een formulier.'); ?></div>
+
+        <?php endif; ?>
+
+      </div>
 
     </div>
 
