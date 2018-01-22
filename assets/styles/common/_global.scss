@@ -1,0 +1,9 @@
+.bg-center{
+  background-size:cover;
+  background-position: center;
+}
+
+// Generate `.bg-*` color utilities
+@each $color, $value in $theme-colors {
+  @include bg-variant('.bg-#{$color}', $value);
+}
