@@ -12,6 +12,7 @@ $sage_includes = [
 	'lib/fields/visual.php',           // Visual
 	'lib/fields/cards.php',            // Visual
 	'lib/fields/maps.php',             // Google Maps
+	'lib/fields/maps-multi.php',             // Google Maps Multi
 ];
 foreach ( $sage_includes as $file ) {
 	if ( ! $filepath = locate_template( $file ) ) {
@@ -176,6 +177,27 @@ add_action('acf/init', function(){
                   'type' => 'clone',
                   'clone' => array(
                     0 => 'group_google_maps',
+                  ),
+                  'display' => 'seamless',
+                  'layout' => 'block',
+                ),
+              ),
+            ),
+
+            /*====== Google Maps Multi ======*/
+            'layout_maps_multi' => array(
+              'key' => 'layout_maps_multi',
+              'name' => 'maps_multi',
+              'label' => __('Google Maps Locaties'),
+              'display' => 'block',
+              'sub_fields' => array(
+                array(
+                  'key' => 'field_maps',
+                  'label' => 'Clone Google Maps Multi',
+                  'name' => 'clone_maps_multi',
+                  'type' => 'clone',
+                  'clone' => array(
+                    0 => 'group_google_maps_multi',
                   ),
                   'display' => 'seamless',
                   'layout' => 'block',
