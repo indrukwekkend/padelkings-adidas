@@ -1,23 +1,27 @@
 <section id="<?= strtolower( str_replace( ' ','-', get_sub_field('title') ) ); ?>" class="cards bg-light">
 
-	<div class="container py-4">
+  <div class="container py-4">
 
     <?php get_template_part('templates/sections/parts/title'); ?>
 
-		<?php if( have_rows('items') ): ?>
+    <?php if( have_rows('items') ): ?>
 
-			<div class="row card-deck mb-4 justify-content-middle">
+      <div class="row mb-4 justify-content-center">
 
-				<?php  while( have_rows('items') ) : the_row(); ?>
+        <div class="card-deck">
 
-					<?php get_template_part('templates/sections/parts/cards','item'); ?>
+          <?php  while( have_rows('items') ) : the_row(); ?>
 
-				<?php endwhile; ?>
+            <?php get_template_part('templates/sections/parts/cards','item'); ?>
 
-			</div>
+          <?php endwhile; ?>
 
-		<?php endif; ?>
+        </div>
 
-	</div>
+      </div>
+
+    <?php endif; ?>
+
+  </div>
 
 </section>
