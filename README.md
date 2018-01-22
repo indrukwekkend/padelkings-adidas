@@ -17,3 +17,4 @@ Een onepager thema.
 #### Packages (Bower)
 * [AOS](https://github.com/michalsnik/aos)
 * [SmoothScroll](https://github.com/cferdinandi/smooth-scroll)
+* [FontAwesome](https://github.com/components/font-awesome)
