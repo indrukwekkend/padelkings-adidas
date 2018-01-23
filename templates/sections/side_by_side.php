@@ -1,6 +1,6 @@
-<section id="<?= strtolower( str_replace( ' ','-', get_sub_field('title') ) ); ?>" class="cards bg-light">
+<section <?= ( get_sub_field('title') ) ?strtolower( str_replace( ' ','-', get_sub_field('title') ) ) : '' ; ?> class="cards bg-light">
 
-  <div class="container">
+  <div class="container <?= ( get_sub_field('title') ) ? 'pt-4' : '' ; ?>">
 
     <?php get_template_part('templates/sections/parts/title'); ?>
 
