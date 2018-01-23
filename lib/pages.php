@@ -6,6 +6,12 @@
  * Field Map:
  * Algemeen Telefoonmummer (text)
  * Algemeen Emailadres (text)
+ * Social Media (repeater)
+ *   - Dienst (select)
+ *   - Gebruikersnaam (text)
+ *   - URL (text)
+ *
+ * gravityforms_id (forms)
  */
 namespace Roots\Sage\Pages;
 
@@ -120,12 +126,12 @@ add_action('acf/init', function(){
           'name' => 'gravityform_id',
           'type' => 'forms',
           'instructions' => __('Kies een Gravity Forms formulier'),
-          'required' => 1,
+          'required' => 0,
           'return_format' => 'id',
-          'allow_null' => 0,
+          'allow_null' => 1,
           'multiple' => 0,
         ),
-        
+
       ),
       'location' => array(
         array(
