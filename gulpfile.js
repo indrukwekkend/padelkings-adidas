@@ -20,6 +20,11 @@ var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
 var loadplugins  = require('gulp-load-plugins')();
+var removeCode   = require('gulp-remove-code');
+var OSHome       = require('os').homedir();
+var bump         = require('gulp-bump');
+var fs           = require('fs');
+var semver       = require('semver');
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./assets/manifest.json');
@@ -72,6 +77,11 @@ var revManifest = path.dist + 'assets.json';
 var onError = function(err) {
   console.log(err.toString());
   this.emit('end');
+};
+
+// Get package.json
+var getPackageJSON = function() {
+  return JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 };
 
 // ## Reusable Pipelines
@@ -283,7 +293,8 @@ gulp.task('build', function(callback) {
 
   if (argv.production) {
     // only add zip to task list if `--production`
-    tasks = tasks.concat(['zip']);
+    tasks.push('version');
+    tasks.push('zip');
   }
 
   runSequence.apply(
@@ -314,21 +325,54 @@ gulp.task('default', ['clean'], function() {
 // ### Zip
 //`gulp zip` - Zip up a distribution of the compiled WordPress theme.
 gulp.task('zip', function(callback) {
-return gulp.src([
-  'acf-json/*',
-  'dist/**/*',
-  'templates/**/*',
-  'vendor/**/*',
-  'lang/*',
-  'lib/**/*',
-  '*.css',
-  '*.md',
-  '*.php',
-  '*.txt',
-  '*.png',
-], {
- base: '.'
-})
-  .pipe(loadplugins.zip('creatego.zip'))
-  .pipe(gulp.dest('release'));
+  var pkg = getPackageJSON();
+  return gulp.src([
+    'acf-json/*',
+    'dist/**/*',
+    'templates/**/*',
+    'vendor/**/*',
+    'lang/*',
+    'lib/**/*',
+    '*.css',
+    '*.md',
+    '*.php',
+    '*.txt',
+    '*.png',
+  ], {
+   base: '.'
+  })
+  .pipe(removeCode({ production: true }))
+  .pipe(loadplugins.zip(pkg.name +'.zip'))
+  .pipe(gulp.dest( OSHome + '/Documents/Releases'));
+});
+
+// ### Versioning
+//`gulp version` - bump version in package.json and style.css
+gulp.task('version', function() {
+  var pkg = getPackageJSON();
+  var newversion = semver.inc(pkg.version, argv.production);
+  var banner = ['/*',
+    'Theme Name: ' + pkg.theme,
+    'Theme URI: '+ pkg.homepage,
+    'Version: '+ newversion,
+    '',
+    'Author: '+ pkg.author,
+    'Author URI: '+ pkg.homepage,
+    'Text Domain: sage',
+    '',
+    'License: '+ pkg.licenses[0].type,
+    'License URI: '+ pkg.licenses[0].url,
+    '*/',
+    ''].join('\n');
+
+  gulp.src('./package.json')
+    .pipe(bump({version: newversion}))
+    .pipe(gulp.dest('./'));
+
+  fs.writeFile('./style.css', banner, (err) => {
+    if (err){
+      console.error(err.message);
+      this.emit('end');
+    }
+  });
 });

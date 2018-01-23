@@ -4,6 +4,12 @@
 # Padelkings: Adidas Wordpress thema
 Een onepager thema.
 
+### Releases
+Voor het release/upleveren van dit thema de task `gulp --production=(major|minor|patch)` gebruiker om het thema correct te versioneren.
+Dit maakt een upload klare .zip in je thuis map om up te loaden naar de server.
+Voor OS X en Windows is dit een map in je documenten directory genaamd "Releases".
+Dit zal voor OS X `/Documents/Releases` zijn en voor Windows `C:/Users/GEBRUIKER/Documents/Releases`.
+
 
 #### Systeem
  * PHP 7 of hoger

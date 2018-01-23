@@ -1,21 +1,11 @@
 <?php
-/**
- * Sage includes
- *
- * The $sage_includes array determines the code library included in your theme.
- * Add or remove files to the array as needed. Supports child theme overrides.
- *
- * Please note that missing files will produce a fatal error.
- *
- * @link https://github.com/roots/sage/pull/1042
- */
 $sage_includes = [
 	'vendor/autoload.php',     // Autoload
 	'lib/assets.php',          // Scripts and stylesheets
 	'lib/extras.php',          // Custom functions
 	'lib/posts.php',           // Custom post types
   'lib/fields.php',          // Advanced Custom Fields
-  'lib/pages.php',          // Advanced Custom Fields: Option Pages
+  'lib/pages.php',           // Advanced Custom Fields: Option Pages
 	'lib/plugins.php',         // Theme plugins
 	'lib/setup.php',           // Theme setup
 	'lib/titles.php',          // Page titles
@@ -30,8 +20,10 @@ foreach ( $sage_includes as $file ) {
 }
 unset( $file, $filepath );
 
+//removeIf(production)
 // BrowserSync reload on post save
 add_action('save_post', function() {
   $args = ['blocking' => false];
   wp_remote_get('http://'.$_SERVER['SERVER_ADDR'].':3000/__browser_sync__?method=reload', $args);
 } );
+//endRemoveIf(production)
