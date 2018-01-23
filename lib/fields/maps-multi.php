@@ -57,7 +57,7 @@ add_action('acf/init', function(){
       array(
   			'key' => 'field_maps_multi_zoom',
   			'label' => __('Zoom van de kaart'),
-        'instructions' => __('Voer de gewenste zoom in (1-20)'),
+        'instructions' => __('Voer de gewenste zoom (1-20) in voor bij een enkele marker'),
   			'name' => 'zoom',
   			'type' => 'number',
         'default_value' => 10,
