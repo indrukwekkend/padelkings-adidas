@@ -1,6 +1,6 @@
 <?php
 
-namespace Roots\Sage\Image_API;
+namespace Roots\Sage\Functions\Image_API;
 
 /**
  * Get image tag from image object(ACF)
@@ -13,10 +13,15 @@ namespace Roots\Sage\Image_API;
 function get_image_tag( $image, $size = 'thumbnail', $class = null ){
 
   if( is_array($image) ){
-    $url = 'src="'.$image['sizes'][ $size ].'"';
-    $title = 'title="'.$image['title'].'"';
-    $alt = 'alt="'.$image['alt'].'"';
-    $class = 'class="'.$class.'"';
+
+    $url    = 'src="'.$image['sizes'][ $size ].'"';
+
+    $title  = ($image['title']) ? 'title="'.$image['title'].'"':'';
+
+    $alt    = ($image['alt']) ? 'alt="'.$image['alt'].'"':'';
+
+    $class  = ($class) ? 'class="'.$class.'"':'';
+
     return "<img $class $url $title $alt />";
   }
 

@@ -3,7 +3,7 @@
  * Title:           Side By Side layout
  * Description:     Display two columns, one containing an image, the other containing text. Has ability to toggle order.
  * Docs:            https://getbootstrap.com/docs/4.0/components/navs/#javascript-behavior
- * Version:         v2.0.0
+ * Version:         v3.0.0
  *
  * Field Map:
  * title (text)
