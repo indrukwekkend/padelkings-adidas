@@ -1,13 +1,14 @@
 <section class="maps">
 
-  <div class="container-fluid <?= (get_sub_field('title'))?'pt-4':'';?>">
+  <div class="<?php the_sub_field('mode'); ?> <?= (get_sub_field('title'))?'pt-4':'';?>">
 
     <?php get_template_part('templates/sections/parts/title'); ?>
 
     <?php if( have_rows('items') ): ?>
 
-      <div class="row">
-        <div class="col-12 p-0">
+      <div class="row align-items-center">
+
+        <div class="col p-0">
           <div class="acf-map">
 
             <?php  while( have_rows('items') ) : the_row(); ?>
@@ -18,6 +19,23 @@
 
           </div>
         </div>
+
+        <?php if( get_sub_field('style') !== 'none' ): ?>
+
+          <div class="col-5">
+            <ul class="list-group list-group-flush">
+
+              <?php  while( have_rows('items') ) : the_row(); ?>
+
+                <?php get_template_part('templates/sections/parts/maps','list-item'); ?>
+
+              <?php endwhile; ?>
+
+            </ul>
+          </div>
+
+        <?php endif; ?>
+
       </div>
 
     <?php endif; ?>

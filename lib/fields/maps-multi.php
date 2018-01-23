@@ -29,7 +29,7 @@ add_action('acf/init', function(){
   			'type' => 'text',
         'instructions' => __('Voer een titel in'),
         'wrapper' => array(
-          'width' => '70',
+          'width' => '60',
         ),
   		),
       array(
@@ -41,7 +41,25 @@ add_action('acf/init', function(){
         'default_value' => 400,
         'append' => 'px',
         'wrapper' => array(
-          'width' => '30',
+          'width' => '20',
+        ),
+      ),
+      array(
+        'key' => 'field_maps_multi_style',
+        'label' => 'Visuele Style',
+        'name' => 'style',
+        'type' => 'button_group',
+        'instructions' => __('Toon met of zonder lijst naast de kaart'),
+        'choices' => array(
+          'list' => 'Met lijst',
+          'none' => 'Zonder lijst',
+        ),
+        'allow_null' => 0,
+        'default_value' => 'none',
+        'layout' => 'horizontal',
+        'return_format' => 'value',
+        'wrapper' => array(
+          'width' => '20',
         ),
       ),
       array(
@@ -51,7 +69,7 @@ add_action('acf/init', function(){
   			'type' => 'text',
         'instructions' => __('Voer een ondertitel in'),
         'wrapper' => array(
-          'width' => '70',
+          'width' => '60',
         ),
   		),
       array(
@@ -63,12 +81,30 @@ add_action('acf/init', function(){
         'default_value' => 10,
         'append' => 'px',
         'wrapper' => array(
-          'width' => '30',
+          'width' => '20',
         ),
         'min' => 1,
         'max' => 20,
         'step' => 1,
   		),
+      array(
+        'key' => 'field_maps_multi_mode',
+        'label' => 'Visuele modus',
+        'name' => 'mode',
+        'type' => 'button_group',
+        'instructions' => __('Toon vrijstaand of over de volledige breedte van de pagina'),
+        'choices' => array(
+          'container' => 'Vrijstaand',
+          'container-fluid' => 'Pagina breedte',
+        ),
+        'allow_null' => 0,
+        'default_value' => 'container-fluid',
+        'layout' => 'horizontal',
+        'return_format' => 'value',
+        'wrapper' => array(
+          'width' => '20',
+        ),
+      ),
       array(
         'key' => 'field_maps_multi_items',
         'label' => __('Locaties'),
