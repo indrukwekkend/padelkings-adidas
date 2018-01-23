@@ -1,6 +1,7 @@
 <?php
 $sage_includes = [
 	'vendor/autoload.php',     // Autoload
+	'lib/functions.php',     // Autoload
 	'lib/assets.php',          // Scripts and stylesheets
 	'lib/extras.php',          // Custom functions
 	'lib/posts.php',           // Custom post types
