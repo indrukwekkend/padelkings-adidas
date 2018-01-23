@@ -156,13 +156,6 @@ acf_add_local_field_group(array(
 			),
     ),
     array(
-      'key' => 'field_cards_video_title',
-      'label' => __('Titel'),
-      'name' => 'video_title',
-      'type' => 'text',
-      'instructions' => __('Voer hier de titel in van de video. (Dit is niet zichtbaar op de website)'),
-    ),
-    array(
       'key' => 'field_cards_video_url',
       'label' => __('Video URL'),
       'name' => 'url',
