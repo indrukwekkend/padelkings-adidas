@@ -1,16 +1,24 @@
-<section class="bg-light">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-8">
-        <?= do_shortcode('[gravityform id="2" title="false" description="false"]'); ?>
+
+<?php if($gravityform_id > 0): ?>
+
+  <section class="bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+
+        <div class="col-8">
+          <?php gravity_form( $gravityform_id, false, false, false, '', false ); ?>
+        </div>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <?php endif; ?>
 
 <footer class="container-fluid bg-footer">
 
   <div class="row justify-content-center">
+
     <div class="col-12 col-md-8">
       <div class="row py-3">
 
@@ -32,6 +40,7 @@
 
       </div>
     </div>
+
   </div>
 
 </footer>

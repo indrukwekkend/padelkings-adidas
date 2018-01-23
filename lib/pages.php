@@ -113,6 +113,19 @@ add_action('acf/init', function(){
             ),
           ),
         ),
+
+        array(
+          'key' => 'field_gravityforms_id',
+          'label' => __('Gravity Forms'),
+          'name' => 'gravityform_id',
+          'type' => 'forms',
+          'instructions' => __('Kies een Gravity Forms formulier'),
+          'required' => 1,
+          'return_format' => 'id',
+          'allow_null' => 0,
+          'multiple' => 0,
+        ),
+        
       ),
       'location' => array(
         array(
