@@ -8,12 +8,19 @@
  * Field Map:
  * title (text)
  * lead (text)
+ * media (button_group)
+ *
  * tab #1
  *  - content (wysiwyg)
  *
  * tab #2
  *  - image (image object)
  *  - toggle (button_group)
+ *
+ * tab #3
+ *  - video_title (text)
+ *  - video_url (text)
+ *  - ratio (select)
  *
  * Files:
  * templates/sections/side-by-side.php
@@ -33,14 +40,34 @@ acf_add_local_field_group(array(
       'endpoint' => 0,
     ),
     array(
-      'key' => 'field_cards_title',
+      'key' => 'field_side_by_side_title',
       'label' => __('Titel'),
       'name' => 'title',
       'type' => 'text',
       'instructions' => '',
+      'wrapper' => array(
+        'width' => '70',
+      ),
     ),
     array(
-      'key' => 'field_cards_subtitle',
+      'key' => 'field_side_by_side_media_toggle',
+      'label' => 'Media Type',
+      'name' => 'media_toggle',
+      'type' => 'button_group',
+      'choices' => array(
+        'image' => __('Afbeelding'),
+        'video' => __('Video'),
+      ),
+      'allow_null' => 0,
+      'default_value' => 'image',
+      'layout' => 'horizontal',
+      'return_format' => 'value',
+      'wrapper' => array(
+        'width' => '30',
+      ),
+    ),
+    array(
+      'key' => 'field_side_by_side_subtitle',
       'label' => __('Ondertitel'),
       'name' => 'lead',
       'type' => 'text',
@@ -57,12 +84,29 @@ acf_add_local_field_group(array(
       'media_upload' => 1,
       'delay' => 1,
     ),
+
     array(
       'key' => 'field_side_by_side_tab_2',
       'label' => __('Afbeelding'),
       'type' => 'tab',
       'placement' => 'top',
       'endpoint' => 0,
+      'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_side_by_side_media_toggle',
+						'operator' => '==',
+						'value' => 'image',
+					),
+				),
+			),
+    ),
+    array(
+      'key' => 'field_side_by_side_image_title',
+      'label' => __('Titel'),
+      'name' => 'image_title',
+      'type' => 'text',
+      'instructions' => '',
     ),
     array(
       'key' => 'field_side_by_side_image',
@@ -77,9 +121,9 @@ acf_add_local_field_group(array(
       'library' => 'all',
     ),
     array(
-      'key' => 'field_side_by_side_toggle',
+      'key' => 'field_side_by_side_visual_toggle',
       'label' => 'Visuele modus',
-      'name' => 'toggle',
+      'name' => 'visual_toggle',
       'type' => 'button_group',
       'instructions' => __('Afbeelding aan de linker- of rechterkant van de tekst tonen'),
       'choices' => array(
@@ -87,11 +131,65 @@ acf_add_local_field_group(array(
         'justify-content-between' => __('Rechts'),
       ),
       'allow_null' => 0,
-      'default_value' => 'full',
+      'default_value' => 'justify-content-between',
       'layout' => 'horizontal',
       'return_format' => 'value',
       'wrapper' => array(
         'width' => '30',
+      ),
+    ),
+
+    array(
+      'key' => 'field_side_by_side_tab_3',
+      'label' => __('Video'),
+      'type' => 'tab',
+      'placement' => 'top',
+      'endpoint' => 0,
+      'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_side_by_side_media_toggle',
+						'operator' => '==',
+						'value' => 'video',
+					),
+				),
+			),
+    ),
+    array(
+      'key' => 'field_cards_video_title',
+      'label' => __('Titel'),
+      'name' => 'video_title',
+      'type' => 'text',
+      'instructions' => __('Voer hier de titel in van de video. (Dit is niet zichtbaar op de website)'),
+    ),
+    array(
+      'key' => 'field_cards_video_url',
+      'label' => __('Video URL'),
+      'name' => 'url',
+      'type' => 'text',
+      'instructions' => __('Voer hier de URL in van de video'),
+      'wrapper' => array(
+        'width' => '80',
+      ),
+    ),
+    array(
+      'key' => 'field_side_by_side_ratio',
+      'label' => 'Video Verhouding',
+      'name' => 'ratio',
+      'type' => 'select',
+      'instructions' => __('henkie'),
+      'choices' => array(
+        'embed-responsive-21by9' => __('21:9'),
+        'embed-responsive-16by9' => __('16:9'),
+        'embed-responsive-4by3' => __('4:3'),
+        'embed-responsive-1by1' => __('1:1'),
+      ),
+      'allow_null' => 0,
+      'default_value' => 'embed-responsive-16by9',
+      'layout' => 'horizontal',
+      'return_format' => 'value',
+      'wrapper' => array(
+        'width' => '20',
       ),
     ),
 	),
