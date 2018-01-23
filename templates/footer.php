@@ -1,12 +1,12 @@
 
-<?php if($gravityform_id > 0): ?>
+<?php if( get_field('gravityform_id','option') > 0): ?>
 
   <section class="bg-light">
     <div class="container">
       <div class="row justify-content-center">
 
         <div class="col-8">
-          <?php gravity_form( $gravityform_id, false, false, false, '', false ); ?>
+          <?php gravity_form( get_field('gravityform_id','option'), false, false, false, '', false ); ?>
         </div>
 
       </div>
