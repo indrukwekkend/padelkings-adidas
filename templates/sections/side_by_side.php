@@ -6,7 +6,7 @@
 
       <div class="col-12 <?= (get_sub_field('media_toggle') == "image") ? 'col-md-7 pr-5' : 'col-md-6'; ?> py-4">
 
-        <?php get_template_part('templates/sections/parts/title'); ?>
+        <h5><?php the_sub_field('title'); ?></h5>
 
         <?php the_sub_field('content'); ?>
 

@@ -1,7 +1,7 @@
 
 <?php if( get_field('gravityform_id','option') > 0): ?>
 
-  <section class="bg-light">
+  <section class="bg-footer">
     <div class="container">
       <div class="row justify-content-center">
 
