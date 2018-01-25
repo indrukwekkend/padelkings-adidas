@@ -72,7 +72,31 @@ acf_add_local_field_group(array(
       'name' => 'lead',
       'type' => 'text',
       'instructions' => '',
+      'wrapper' => array(
+        'width' => '70',
+      ),
     ),
+
+    array(
+      'key' => 'field_side_by_side_visual_toggle',
+      'label' => 'Visuele modus',
+      'name' => 'visual_toggle',
+      'type' => 'button_group',
+      'instructions' => __('Media aan de linker- of rechterkant van de tekst tonen'),
+      'choices' => array(
+        'justify-content-between flex-row-reverse' => __('Links'),
+        'justify-content-between' => __('Rechts'),
+      ),
+      'allow_null' => 0,
+      'default_value' => 'justify-content-between',
+      'layout' => 'horizontal',
+      'return_format' => 'value',
+      'wrapper' => array(
+        'width' => '30',
+      ),
+    ),
+
+
     array(
       'key' => 'field_side_by_side_content',
       'label' => 'content',
@@ -113,30 +137,9 @@ acf_add_local_field_group(array(
       'label' => __('Afbeelding'),
       'name' => 'image',
       'type' => 'image',
-      'wrapper' => array(
-        'width' => '70',
-      ),
       'return_format' => 'array',
       'preview_size' => 'medium',
       'library' => 'all',
-    ),
-    array(
-      'key' => 'field_side_by_side_visual_toggle',
-      'label' => 'Visuele modus',
-      'name' => 'visual_toggle',
-      'type' => 'button_group',
-      'instructions' => __('Afbeelding aan de linker- of rechterkant van de tekst tonen'),
-      'choices' => array(
-        'justify-content-between flex-row-reverse' => __('Links'),
-        'justify-content-between' => __('Rechts'),
-      ),
-      'allow_null' => 0,
-      'default_value' => 'justify-content-between',
-      'layout' => 'horizontal',
-      'return_format' => 'value',
-      'wrapper' => array(
-        'width' => '30',
-      ),
     ),
 
     array(
@@ -162,9 +165,10 @@ acf_add_local_field_group(array(
       'type' => 'text',
       'instructions' => __('Voer hier de URL in van de video'),
       'wrapper' => array(
-        'width' => '80',
+        'width' => '60',
       ),
     ),
+
     array(
       'key' => 'field_side_by_side_ratio',
       'label' => 'Video Verhouding',

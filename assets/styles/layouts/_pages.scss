@@ -1,6 +1,25 @@
 .visual{
-  display: block;
-	height: 360px;
-	background-size: cover;
-	background-position: center;
+  position: relative;
+
+  .content{
+    position: absolute;
+    top:0px;
+    margin-left: auto;
+    margin-right: auto;
+    height:100%;
+  }
+}
+
+.wysiwyg{
+
+  margin-top: -300px;
+
+  &:after{
+    display:block;
+    content:'';
+    height: 8px;
+    background-image: url('../images/divider.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }

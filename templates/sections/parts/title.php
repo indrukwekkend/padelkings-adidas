@@ -1,5 +1,5 @@
 <?php if( get_sub_field('title') or get_sub_field('lead') ): ?>
-  <div class="row pb-3 text-center">
+  <div class="row pb-3">
 
     <div class="col-12">
 

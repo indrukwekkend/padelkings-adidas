@@ -9,7 +9,7 @@ $sage_includes = [
 	'lib/fields/gravityforms.php',     // Gravity Forms
 	'lib/fields/columns.php',          // Columns
 	'lib/fields/display.php',          // Display
-	'lib/fields/visual.php',           // Visual
+	'lib/fields/visual-text.php',           // Visual
 	'lib/fields/cards.php',            // Visual
 	'lib/fields/maps.php',             // Google Maps
 	'lib/fields/maps-multi.php',       // Google Maps Multi
@@ -124,18 +124,18 @@ add_action('acf/init', function(){
 
             /*====== Visual ======*/
             'layout_visual' => array(
-              'key' => 'layout_visual',
-              'name' => 'visual',
+              'key' => 'layout_visual_text',
+              'name' => 'visual_text',
               'label' => 'Visual',
               'display' => 'block',
               'sub_fields' => array(
                 array(
-                  'key' => 'field_visual',
-                  'label' => 'Clone Visual',
-                  'name' => 'clone_visual',
+                  'key' => 'field_visual_text',
+                  'label' => 'Clone Visual Text',
+                  'name' => 'clone_visual Text',
                   'type' => 'clone',
                   'clone' => array(
-                    0 => 'group_visual',
+                    0 => 'group_visual_text',
                   ),
                   'display' => 'seamless',
                   'layout' => 'block',

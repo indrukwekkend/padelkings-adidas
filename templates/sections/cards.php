@@ -1,4 +1,4 @@
-<section id="<?= strtolower( str_replace( ' ','-', get_sub_field('title') ) ); ?>" class="cards bg-light">
+<section id="<?= strtolower( str_replace( ' ','-', get_sub_field('title') ) ); ?>" class="cards">
 
   <div class="container py-4">
 

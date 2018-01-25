@@ -1,4 +1,4 @@
-<section class="maps">
+<section class="maps bg-gray">
 
   <div class="<?php the_sub_field('mode'); ?> <?= (get_sub_field('title'))?'pt-4':'';?>">
 
@@ -6,7 +6,7 @@
 
     <?php if( have_rows('items') ): ?>
 
-      <div class="row align-items-center">
+      <div class="row align-items-top">
 
         <div class="col p-0">
           <div class="acf-map">
@@ -22,7 +22,7 @@
 
         <?php if( get_sub_field('style') !== 'none' ): ?>
 
-          <div class="col-5">
+          <div class="col-5 pt-3 text-black">
             <ul class="list-group list-group-flush">
 
               <?php  while( have_rows('items') ) : the_row(); ?>

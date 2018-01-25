@@ -18,7 +18,9 @@ $jumbotron = get_field('jumbotron');
 
 ?>
 
-<section class="jumbotron jumbotron-fluid m-0 p-0 bg-center" <?= $background( has_post_thumbnail() ); ?>>
+<section class="jumbotron jumbotron-fluid m-0 p-0 bg-center">
+
+  <img class="img-fluid" src="<?= get_the_post_thumbnail_url(); ?>"?>
 
 	<?php if( $jumbotron['title'] or $jumbotron['lead'] or $jumbotron['cta']): ?>
 

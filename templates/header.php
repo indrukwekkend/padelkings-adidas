@@ -1,6 +1,6 @@
 <?php use Roots\Sage\Assets; ?>
 <header>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-header">
 		<div class="container">
 
 			<a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>">
