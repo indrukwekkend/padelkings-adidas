@@ -8,6 +8,9 @@ use Roots\Sage\Assets;
  * Theme setup
  */
 function setup() {
+  // Assign Google fonts
+	define('GOOGLE_FONTS', 'Raleway:300,400,700');
+
   // Enable features from Soil when plugin is activated
   // https://roots.io/plugins/soil/
   add_theme_support('soil-clean-up');
@@ -129,3 +132,16 @@ add_filter( 'gform_field_container', __NAMESPACE__ . '\\add_bootstrap_container_
  * Remove acf-post2post nag
  */
 add_filter('remove_hube2_nag', '__return_true');
+
+/**
+ * Manage google fonts of load_google_font()
+ * set GOOGLE_FONTS constant in setup().
+ */
+function load_google_fonts() {
+
+	if( ! defined( 'GOOGLE_FONTS' ) ) return;
+
+	echo '<link href="http://fonts.googleapis.com/css?family=' . GOOGLE_FONTS . '" rel="stylesheet" type="text/css" />'."\n";
+
+}
+add_action( 'wp_head', __NAMESPACE__ . '\\load_google_fonts' , 1);
