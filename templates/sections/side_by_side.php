@@ -1,6 +1,6 @@
 <section <?= ( get_sub_field('title') ) ? 'id="'.strtolower( str_replace( ' ','-', get_sub_field('title') ) ).'"' : '' ; ?> class="cards side-by-side">
 
-  <div class="container pt-5">
+  <div class="container py-5">
 
     <div class="row <?= get_sub_field('visual_toggle'); ?> align-items-center">
 

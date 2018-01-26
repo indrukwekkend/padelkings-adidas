@@ -14,7 +14,15 @@ function get_image_tag( $image, $size = 'thumbnail', $class = null ){
 
   if( is_array($image) ){
 
-    $url    = 'src="'.$image['sizes'][ $size ].'"';
+    if($size === "full"):
+
+      $url  = 'src="'.$image['url'].'"';
+
+    else:
+
+      $url  = 'src="'.$image['sizes'][ $size ].'"';
+
+    endif;
 
     $title  = ($image['title']) ? 'title="'.$image['title'].'"':'';
 

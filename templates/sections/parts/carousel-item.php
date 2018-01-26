@@ -1,6 +1,6 @@
 <?php use Roots\Sage\Functions\Image_API; ?>
 
-<?= Image_API\get_image_tag( get_sub_field('image'), 'large', 'd-block w-100'); ?>
+<?= Image_API\get_image_tag( get_sub_field('image'), 'full', 'd-block w-100'); ?>
 
 <?php $content = get_sub_field('item'); ?>
 

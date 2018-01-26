@@ -1,3 +1,4 @@
+<?php use Roots\Sage\Assets; ?>
 <section class="maps bg-gray">
 
   <div class="<?php the_sub_field('mode'); ?> <?= (get_sub_field('title'))?'pt-4':'';?>">
@@ -57,6 +58,9 @@
       .acf-map img {
         max-width: inherit !important;
       }
+      img[src="<?= Assets\asset_path('images/marker.png'); ?>"] {
+        background-color: black;
+      }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=<?= acf_get_setting('google_api_key'); ?>"></script>
     <script type="text/javascript">
@@ -66,13 +70,24 @@
 
           var $markers = $el.find('.marker');
 
+          var map_style=new google.maps.StyledMapType([{"elementType":"geometry","stylers":[{"color":"#f5f5f5"}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"elementType":"labels.text.fill","stylers":[{"color":"#616161"}]},{"elementType":"labels.text.stroke","stylers":[{"color":"#f5f5f5"}]},{"featureType":"administrative.land_parcel","elementType":"labels.text.fill","stylers":[{"color":"#bdbdbd"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#eeeeee"}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"color":"#757575"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#e5e5e5"}]},{"featureType":"poi.park","elementType":"labels.text.fill","stylers":[{"color":"#9e9e9e"}]},{"featureType":"road","elementType":"geometry","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"labels.text.fill","stylers":[{"color":"#757575"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#dadada"}]},{"featureType":"road.highway","elementType":"labels.text.fill","stylers":[{"color":"#616161"}]},{"featureType":"road.local","elementType":"labels.text.fill","stylers":[{"color":"#9e9e9e"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"color":"#e5e5e5"}]},{"featureType":"transit.station","elementType":"geometry","stylers":[{"color":"#eeeeee"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#c9c9c9"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#9e9e9e"}]}],{name:'Styled Map'});
+
           var args = {
             zoom: <?= the_sub_field('zoom'); ?>,
             center: new google.maps.LatLng(0, 0),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+            optimized: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            mapTypeControlOptions: {
+            mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
+                    'styled_map']
+          }
           };
 
           var map = new google.maps.Map( $el[0], args);
+
+          map.mapTypes.set('styled_map', map_style);
+          map.setMapTypeId('styled_map');
+
 
           map.markers = [];
 
@@ -94,7 +109,8 @@
 
           var marker = new google.maps.Marker({
             position: latlng,
-            map: map
+            map: map,
+            icon: '<?= Assets\asset_path('images/marker.png'); ?>',
           });
 
           map.markers.push( marker );

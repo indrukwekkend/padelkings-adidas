@@ -1,4 +1,4 @@
-<section class="visual">
+<section class="visual pt-5">
 
   <div class="card border-0">
     <img class="card-img" src="<?php the_sub_field('image'); ?>" alt="Card image">
