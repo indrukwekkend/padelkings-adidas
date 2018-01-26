@@ -1,5 +1,10 @@
-.jumbotron{
-	background-size: cover;
-	background-position: center;
-	border-radius: 0 !important;
+.navbar-text{
+  .nav-link{
+
+    .fa{
+      font-size: 1.8rem;
+
+      @extend .text-white;
+    }
+  }
 }

@@ -112,6 +112,8 @@ if( function_exists('acf_add_local_field_group') ):
                       'choices' => array(
                         'btn-primary' => 'Primair',
                         'btn-secondary' => 'Secondair',
+                        'btn-pink' => 'Roze',
+                        'btn-lime' => 'Limoen',
                       ),
                       'default_value' => array(
                         'btn-primary' => 'Primair',

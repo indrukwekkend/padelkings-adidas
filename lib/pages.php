@@ -79,10 +79,10 @@ add_action('acf/init', function(){
                 'width' => '20',
               ),
               'choices' => array(
-                'facebook' => 'Facebook',
+                'facebook-square' => 'Facebook',
                 'instagram' => 'Instagram',
                 'twitter' => 'Twitter',
-                'youtube-play' => 'YouTube',
+                'youtube-square' => 'YouTube',
                 'linkedin' => 'Linkedin',
                 'pinterest' => 'Pinterest',
                 'google-plus' => 'Google+',

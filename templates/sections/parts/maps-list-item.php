@@ -1,13 +1,9 @@
 <?php $location = get_sub_field('location'); ?>
 
-<li class="list-group-item p-2">
+<li class=" p-0">
 
   <div>
-    <?php the_sub_field('title'); ?>
-  </div>
-
-  <div>
-    <small class="text-muted"><?= $location['address']; ?></small>
+    <small><?= $i; ?> - <?php the_sub_field('title'); ?> - <?= $location['address']; ?></small>
   </div>
 
   <div>

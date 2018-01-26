@@ -1,12 +1,12 @@
-<section <?= ( get_sub_field('title') ) ? 'id="'.strtolower( str_replace( ' ','-', get_sub_field('title') ) ).'"' : '' ; ?> class="cards">
+<section <?= ( get_sub_field('title') ) ? 'id="'.strtolower( str_replace( ' ','-', get_sub_field('title') ) ).'"' : '' ; ?> class="cards side-by-side">
 
   <div class="container pt-5">
 
     <div class="row <?= get_sub_field('visual_toggle'); ?> align-items-center">
 
-      <div class="col-12 <?= (get_sub_field('media_toggle') == "image") ? 'col-md-7 pr-5' : 'col-md-6'; ?> py-4">
+      <div class="col-12 <?= (get_sub_field('media_toggle') == "image") ? 'col-md-7 pr-md-5' : 'col-md-6'; ?> py-md-4">
 
-        <h5><?php the_sub_field('title'); ?></h5>
+        <?php the_sub_field('title'); ?>
 
         <?php the_sub_field('content'); ?>
 

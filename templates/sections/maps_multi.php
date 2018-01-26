@@ -8,7 +8,7 @@
 
       <div class="row align-items-top">
 
-        <div class="col p-0">
+        <div class="col-12 col-lg p-0">
           <div class="acf-map">
 
             <?php  while( have_rows('items') ) : the_row(); ?>
@@ -22,16 +22,24 @@
 
         <?php if( get_sub_field('style') !== 'none' ): ?>
 
-          <div class="col-5 pt-3 text-black">
-            <ul class="list-group list-group-flush">
+          <div class="col-12 col-lg-5 pt-3 text-black">
 
-              <?php  while( have_rows('items') ) : the_row(); ?>
+            <div class="d-lg-inline-block bg-white py-3 pl-3">
+              <ol class="p-0 pr-lg-5">
 
-                <?php get_template_part('templates/sections/parts/maps','list-item'); ?>
+                <?php $i = 0;?>
 
-              <?php endwhile; ?>
+                <?php  while( have_rows('items') ) : the_row(); $i++; ?>
 
-            </ul>
+                  <?php include(locate_template('templates/sections/parts/maps-list-item.php')); ?>
+
+                <?php endwhile; ?>
+
+              </ol>
+              <div>
+                <strong>DEALERS ADIDAS PADEL NEDERLAND<br>OP DEZE PUNTEN KUNT UW ADIDAS PADEL<br>PRODUCTEN VERKRIJGEN.</strong>
+              </div>
+            </div>
           </div>
 
         <?php endif; ?>
