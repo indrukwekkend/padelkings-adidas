@@ -3,6 +3,12 @@
   background-position: center;
 }
 
+.btn{
+  text-transform: uppercase;
+  font-size: $h6-font-size;
+  font-weight: 900;
+}
+
 // Generate `.bg-*` color utilities
 @each $color, $value in $theme-colors {
   @include bg-variant('.bg-#{$color}', $value);

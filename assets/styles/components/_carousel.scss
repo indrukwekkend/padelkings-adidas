@@ -1,0 +1,33 @@
+.carousel-caption{
+  text-align:left;
+  top:0;
+  bottom: auto;
+
+  .carousel-title{
+    position: relative;
+    background-color: rgba($blue, .35);
+
+    &:after{
+      display:block;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background-color: inherit;
+      width: 3rem;
+      left: -3rem;
+    }
+
+    @extend .py-2;
+    @extend .mb-2;
+  }
+  .carousel-lead{
+    display: inline-block;
+    background-color: $black;
+    color: $white;
+
+    @extend strong;
+    @extend .p-2;
+    @extend .mb-2;
+  }
+}

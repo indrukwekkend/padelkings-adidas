@@ -5,15 +5,16 @@
 namespace Roots\Sage\Fields;
 
 $sage_includes = [
-	'lib/fields/pricing.php',          // Prijslijsten
-	'lib/fields/gravityforms.php',     // Gravity Forms
-	'lib/fields/columns.php',          // Columns
-	'lib/fields/display.php',          // Display
-	'lib/fields/visual-text.php',           // Visual
-	'lib/fields/cards.php',            // Visual
-	'lib/fields/maps.php',             // Google Maps
-	'lib/fields/maps-multi.php',       // Google Maps Multi
-	'lib/fields/side-by-side.php',     // Side By Side
+	'lib/fields/pricing.php',              // Prijslijsten
+	'lib/fields/gravityforms.php',         // Gravity Forms
+	'lib/fields/columns.php',              // Columns
+	'lib/fields/display.php',              // Display
+	'lib/fields/visual-text.php',          // Visual
+	'lib/fields/cards.php',                // Visual
+	'lib/fields/maps.php',                 // Google Maps
+	'lib/fields/maps-multi.php',           // Google Maps Multi
+	'lib/fields/side-by-side.php',         // Side By Side
+	'lib/fields/carousel.php',             // Carousel
 ];
 foreach ( $sage_includes as $file ) {
 	if ( ! $filepath = locate_template( $file ) ) {
@@ -26,6 +27,7 @@ unset( $file, $filepath );
 add_action('acf/init', function(){
 
   if( function_exists('acf_add_local_field_group') ):
+
     acf_add_local_field_group(array(
     	'key' => 'group_layouts',
     	'title' => 'Layouts',
