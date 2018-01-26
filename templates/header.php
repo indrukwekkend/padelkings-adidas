@@ -13,9 +13,6 @@
 
       <div id="primary_navigation" class="collapse navbar-collapse">
 
-        <span class="navbar-text">
-          <?php get_template_part('templates/sections/parts/navbar','social'); ?>
-        </span>
 
         <?php
             wp_nav_menu(
@@ -32,6 +29,11 @@
                 )
             );
           ?>
+
+          <span class="navbar-text">
+            <?php get_template_part('templates/sections/parts/navbar','social'); ?>
+          </span>
+
         </div>
 
 			</div>
