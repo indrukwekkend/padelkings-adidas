@@ -1,11 +1,12 @@
-.carousel-caption{
-  text-align:left;
-  top:0;
-  bottom: auto;
 
-  .carousel-title{
+.header{
+  min-height: 360px;
+
+  .title{
     position: relative;
     background-color: rgba($blue, .35);
+
+    @extend .py-3;
 
     &:after{
       display:block;
@@ -21,13 +22,28 @@
     @extend .py-2;
     @extend .mb-2;
   }
-  .carousel-lead{
+
+  .lead{
     display: inline-block;
     background-color: $black;
     color: $white;
 
     @extend strong;
-    @extend .p-2;
+    @extend .p-3;
     @extend .mb-2;
+  }
+
+  .content{
+    margin-top: 12rem;
+    text-shadow: 0px 0px 6px $black;
+
+    &:after{
+      display:block;
+      content:'';
+      height: 2px;
+      background-image: url('../images/divider.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 }

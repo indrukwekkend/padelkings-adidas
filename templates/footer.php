@@ -1,4 +1,4 @@
-
+<?php use Roots\Sage\Assets; ?>
 <?php if( get_field('gravityform_id','option') > 0): ?>
 
   <section class="bg-footer">
@@ -13,29 +13,32 @@
     </div>
   </section>
 
-  <?php endif; ?>
+<?php endif; ?>
 
 <footer class="container-fluid bg-footer">
 
   <div class="row justify-content-center">
 
     <div class="col-12 col-md-8">
-      <div class="row py-3">
+      <div class="row py-5">
 
-        <div class="col-6 text-left">
-          <p class="text-muted">
-            <small>Copyright &copy; <?= date('Y') ?>
-              <a href="<?= esc_url(home_url('/')); ?>" title="<?= bloginfo('name'); ?>">
-                <?= bloginfo('name'); ?>
-              </a>
-            </small>
-          </p>
+        <div class="col-3 text-left">
+          <img class="img-fluid" src="<?= Assets\asset_path('images/allforpadel.png');?>" />
         </div>
 
-        <div class="col-6 text-right">
-          <p class="text-muted">
-            <small>Realisatie: <a href="https://indrukwekkend.nl/" title="Indrukwekkend">Indrukwekkend</a></small>
-          </p>
+        <div class="col-9 text-right">
+          <div class="row">
+            <div class="col-12 text-uppercase">
+              <strong>CONTACT - </strong><a href="mailto:<?php the_field('general_email','option'); ?>"?><?php the_field('general_email','option'); ?></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p class="text-muted">
+                <small>Realisatie: <a class="text-muted" href="https://indrukwekkend.nl/" title="Indrukwekkend">Indrukwekkend</a></small>
+              </p>
+            </div>
+          </div>
         </div>
 
       </div>

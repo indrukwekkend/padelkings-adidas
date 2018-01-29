@@ -6,13 +6,13 @@
 
 <?php if( $content['title'] or $content['lead'] or $content['cta']): ?>
 
-  <div class="carousel-caption d-none d-md-block">
+  <div class="carousel-caption">
     <div class="row">
-      <div class="col-8">
+      <div class="col-12 col-md-8">
 
         <?php if( $content['title'] ): ?>
 
-          <div class="carousel-title ">
+          <div class="carousel-title">
             <?= $content['title']; ?>
           </div>
 

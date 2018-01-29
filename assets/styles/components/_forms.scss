@@ -22,9 +22,16 @@
 
   input, select, textarea {
     @extend .form-control;
+
+    border: 1px solid #5D5D5D;
+
+    input::placeholder{
+      color: #5D5D5D;
+    }
   }
 
   .gfield_label{
+    display:none !important;
     font-weight: normal !important;
   }
 
@@ -67,4 +74,18 @@
 
 .gfield_error .ginput_container {
   margin-bottom: 10px;
+}
+
+.gform_footer{
+  @extend .text-center;
+}
+
+.gform_multi_column_wrapper .gform_footer:after {
+	content: ' ';
+	display: table;
+	clear: both;
+}
+.gform_multi_column_wrapper .gform_footer .gform_button {
+	float: right;
+	margin-right: 0;
 }

@@ -1,12 +1,18 @@
 <?php $gravityform_id = get_sub_field('gravityform_id'); ?>
 
-<section class="gravityform">
+<section id="contact" class="gravityform">
 
   <div class="container">
 
+    <div class="row py-3 text-center">
+      <div class="col-12">
+        <h5>CONTACT</h5>
+      </div>
+    </div>
+
     <div class="row py-3 justify-content-center">
 
-      <div class="col-8">
+      <div class="col-12 col-md-8">
 
         <?php if($gravityform_id > 0): ?>
 

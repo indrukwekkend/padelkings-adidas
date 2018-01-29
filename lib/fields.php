@@ -15,6 +15,7 @@ $sage_includes = [
 	'lib/fields/maps-multi.php',           // Google Maps Multi
 	'lib/fields/side-by-side.php',         // Side By Side
 	'lib/fields/carousel.php',             // Carousel
+	'lib/fields/facebook.php',             // Facebook Add-on
 ];
 foreach ( $sage_includes as $file ) {
 	if ( ! $filepath = locate_template( $file ) ) {
@@ -225,6 +226,27 @@ add_action('acf/init', function(){
                   ),
                   'display' => 'seamless',
                   'layout' => 'block',
+                ),
+              ),
+            ),
+
+            /*====== Facebook Add-on ======*/
+            'layout_facebook' => array(
+              'key' => 'layout_facebook',
+              'name' => 'facebook',
+              'label' => 'facebook',
+              'display' => 'block',
+              'sub_fields' => array(
+                array(
+                	'key' => 'field_clone_facebook',
+                	'label' => 'Clone Facebook',
+                	'name' => 'clone_facebook',
+                	'type' => 'clone',
+                	'clone' => array(
+                		0 => 'group_facebook',
+                	),
+                	'display' => 'seamless',
+                	'layout' => 'block',
                 ),
               ),
             ),

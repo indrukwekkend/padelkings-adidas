@@ -52,7 +52,7 @@ function get_video_embed_url($video = null){
 
           if (preg_match($videoIdRegex, $link, $results)):
 
-            return "//youtube.com/embed/".$results[1];
+            return "//youtube.com/embed/".$results[1]."?rel=0&amp;controls=0&amp;showinfo=0";
 
           endif;
 
