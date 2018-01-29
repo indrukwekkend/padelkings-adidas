@@ -1,4 +1,4 @@
-<?php use Roots\Sage\Assets; ?>
+<?php use Roots\Sage\Assets; $i = 0;?>
 <section class="maps bg-gray">
 
   <div class="<?php the_sub_field('mode'); ?> <?= (get_sub_field('title'))?'pt-4':'';?>">
@@ -12,9 +12,9 @@
         <div class="col-12 col-lg p-0">
           <div class="acf-map">
 
-            <?php  while( have_rows('items') ) : the_row(); ?>
+            <?php  while( have_rows('items') ) : the_row(); $i++; ?>
 
-              <?php get_template_part('templates/sections/parts/maps','item'); ?>
+              <?php include(locate_template('templates/sections/parts/maps-item.php')); ?>
 
             <?php endwhile; ?>
 
@@ -27,8 +27,6 @@
 
             <div class="d-lg-inline-block bg-white py-3 pl-3">
               <ol class="p-0 pr-lg-5">
-
-                <?php $i = 0;?>
 
                 <?php  while( have_rows('items') ) : the_row(); $i++; ?>
 
