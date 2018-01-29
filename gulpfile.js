@@ -327,7 +327,6 @@ gulp.task('default', ['clean'], function() {
 gulp.task('zip', function(callback) {
   var pkg = getPackageJSON();
   return gulp.src([
-    'acf-json/*',
     'dist/**/*',
     'templates/**/*',
     'vendor/**/*',
@@ -341,8 +340,7 @@ gulp.task('zip', function(callback) {
   ], {
    base: '.'
   })
-  .pipe(removeCode({ production: true }))
-  .pipe(loadplugins.zip(pkg.name +'.zip'))
+  .pipe(loadplugins.zip('padelnederland.zip'))
   .pipe(gulp.dest( OSHome + '/Documents/Releases'));
 });
 
