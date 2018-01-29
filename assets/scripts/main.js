@@ -22,6 +22,7 @@
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
+
       }
     },
     // Home page
@@ -31,6 +32,7 @@
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
+        var scroll = new SmoothScroll('a[href*="#"]');
       }
     },
     // About us page, note the change from about-us to about_us.
