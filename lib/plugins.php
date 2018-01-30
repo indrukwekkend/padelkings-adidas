@@ -17,13 +17,6 @@ add_action( 'after_setup_theme', function() {
         'force_deactivation' => true,
       ),
       array(
-      'name'               => 'Advanced Custom Fields: Post2Post Add-on',
-      'slug'               => 'post-2-post-for-acf',
-      'required'           => true,
-      'force_activation'   => true,
-      'force_deactivation' => true,
-      ),
-      array(
       'name'               => 'Advanced Custom Fields: Gravityforms Add-on',
       'slug'               => 'acf-gravityforms-add-on',
       'required'           => true,
@@ -45,10 +38,6 @@ add_action( 'after_setup_theme', function() {
         'required'           => false,
         'force_activation'   => false,
         'force_deactivation' => false,
-      ),
-      array(
-        'name'               => 'Post Types Order',
-        'slug'               => 'post-types-order',
       ),
     );
 

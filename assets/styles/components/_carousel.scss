@@ -1,6 +1,6 @@
 
 .header{
-  min-height: 360px;
+  min-height: 440px;
 
   .title{
     position: relative;
@@ -44,6 +44,16 @@
       background-image: url('../images/divider.jpg');
       background-repeat: no-repeat;
       background-position: center;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .header{
+    .title{
+      &:after{
+        display:none;
+      }
     }
   }
 }

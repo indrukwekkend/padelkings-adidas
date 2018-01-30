@@ -17,12 +17,19 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row d-none d-lg-block">
           <div class="col-12 content text-center">
             <?php the_content();?>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+<section class="container">
+  <div class="row d-block d-lg-none">
+    <div class="col-12 content text-center">
+      <?php the_content();?>
     </div>
   </div>
 </section>

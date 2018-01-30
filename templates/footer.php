@@ -22,12 +22,12 @@
     <div class="col-12 col-md-8">
       <div class="row py-5">
 
-        <div class="col-3 text-left">
+        <div class="col-12 col-md-3 text-md-left">
           <img class="img-fluid" src="<?= Assets\asset_path('images/allforpadel.png');?>" />
         </div>
 
-        <div class="col-9 text-right">
-          <div class="row">
+        <div class="col-12 col-md-9 text-md-right">
+          <div class="row pt-4 pt-md-0">
             <div class="col-12 text-uppercase">
               <strong>CONTACT - </strong><a href="mailto:<?php the_field('general_email','option'); ?>"?><?php the_field('general_email','option'); ?></a>
             </div>

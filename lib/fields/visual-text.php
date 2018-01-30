@@ -21,6 +21,13 @@ add_action('acf/init', function(){
     'fields' => array(
 
       array(
+        'key' => 'field_visual_id',
+        'label' => __('ID'),
+        'name' => 'id',
+        'type' => 'text',
+      ),
+
+      array(
         'key' => 'field_side_by_side_content',
         'label' => 'content',
         'name' => 'content',
