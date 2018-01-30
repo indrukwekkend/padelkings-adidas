@@ -10,7 +10,7 @@
               <h1>PADEL</h1>
             </div>
             <div class="lead">
-              Heeft u intresse in deze upcomming sport? <br> of wilt u kennis maken met ons?
+              Heeft u intresse in deze upcoming sport? <br> of wilt u kennis maken met ons?
             </div>
             <div>
               <a href="#contact" class="btn btn-pink">neem contact op</a>
