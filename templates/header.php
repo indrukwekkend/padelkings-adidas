@@ -37,12 +37,11 @@
       </div>
 
     </div>
-  </div>
-</nav>
+  </nav>
 
-<?php if( is_front_page() or is_page_template('template-landingspage.php') ) : ?>
+  <?php if( is_front_page() or is_page_template('template-landingspage.php') ) : ?>
 
-  <?php get_template_part('templates/sections/header'); ?>
+    <?php get_template_part('templates/sections/header'); ?>
 
-<?php endif;?>
+  <?php endif;?>
 </header>

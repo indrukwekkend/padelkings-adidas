@@ -140,6 +140,19 @@ acf_add_local_field_group(array(
       'return_format' => 'array',
       'preview_size' => 'medium',
       'library' => 'all',
+      'wrapper' => array(
+        'width' => '40',
+      ),
+    ),
+    array(
+      'key' => 'field_side_by_side_url',
+      'label' => __('URL'),
+      'name' => 'url',
+      'type' => 'text',
+      'instructions' => '',
+      'wrapper' => array(
+        'width' => '60',
+      ),
     ),
 
     array(

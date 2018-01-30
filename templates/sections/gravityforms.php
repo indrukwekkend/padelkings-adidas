@@ -16,7 +16,7 @@
 
         <?php if($gravityform_id > 0): ?>
 
-          <?php gravity_form( $gravityform_id, false, false, false, '', false ); ?>
+          <?php gravity_form( $gravityform_id, false, false, false, '', true ); ?>
 
         <?php else: ?>
 
