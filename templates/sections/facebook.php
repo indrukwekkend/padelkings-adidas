@@ -1,6 +1,6 @@
 <section class="facebook">
   <div class="container">
-    <div class="row py-5">
+    <div class="row align-items-center py-5">
 
       <div class="col-12 col-md-6">
         <?php the_sub_field('content'); ?>
